@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.MovieHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1c1c1c;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding: 12px;
+}
+
+.searchMoviesSection {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.searchMovies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.SearchForm {
+    display: flex;
+    gap: 20px;
+}
+
+.SearchForm input[type="text"] {
+    padding: 10px 20px;
+    border: 1px solid #1c1c1c;
+    border-radius: 8px;
+    width: 300px;
+    outline: none;
+}
+
+.SearchForm button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    width: 100px;
+}
+
+.movieResult {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.movieResults {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+/* MovieCard overlay effect */
+.movieCard {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.movieCard img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: filter 0.3s;
+}
+
+.movieCard .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(34, 49, 63, 0.92);
+    color: #fff;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.2rem;
+    text-align: center;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.movieCard:hover .overlay,
+.movieCard:focus-within .overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.movieCard:hover img,
+.movieCard:focus-within img {
+    filter: blur(2px) brightness(0.7);
+}
+
+.movieCard .overlay h3 {
+    margin-bottom: 0.7rem;
+    font-size: 1.3rem;
+    color: #00cec9;
+}
+
+.movieCard .overlay p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #b2bec3;
+}
+
+.tags {
+    margin-top: 20px;
+    margin-left: 12px;
+}
+
+@media (max-width: 600px) {
+    .movieCard img {
+        height: 200px;
+    }
+
+    .movieCard .overlay {
+        padding: 1rem 0.5rem;
+        font-size: 0.95rem;
+    }
+}
