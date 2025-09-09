@@ -14,7 +14,7 @@ const Header = () => {
         <nav>
           <ul>
             <li>
-              <a href={`#`} target="_blank">Get Your Api</a>
+              <a href={`https://www.themoviedb.org/documentation/api`} target="_blank">Get Your Api</a>
             </li>
           </ul>
         </nav>
